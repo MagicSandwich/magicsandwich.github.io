@@ -87,7 +87,7 @@
 			<canvas id="myCanvas" width="100px" height="100px" style="border: 1px solid black;">>Your browser does not support
 				the HTML canvas tag.</canvas>
 			<div class="buttons"><button type="submit" id="submit" onclick="previewFile()" class="drn-btn">Submit/Refresh!!!</button>
-				<button type="submit" id="btndownload" onclick="download(myCanvas, 'myimage.png')"
+				<button type="submit" id="btndownload" onclick="download(myCanvas, 'bebra.png')"
 					class="drn-btn">Download!!!</button></div>
 
 			<a href="https://vk.com/voenporashy" class="author" target="_blank">vk</a>
@@ -176,24 +176,13 @@
 			}
 
 		}
-
-		window.onload = function () {
-			let dwn = document.getElementById('btndownload');
-			canvas = document.getElementById('myCanvas');
-
-			dwn.onclick = function () {
-				download(canvas, 'myimage.png');
-			}
-
-		}
-
 		/* Canvas Donwload */
 		function download(canvas, filename) {
 			/// create an "off-screen" anchor tag
 			let lnk = document.createElement('a'), e;
-
+			
 			/// the key here is to set the download attribute of the a tag
-			lnk.download = filename;
+			lnk.download = `OBDREINILSA-${Date.now()}.png`;
 
 			/// convert canvas content to data-uri for link. When download
 			/// attribute is set the content pointed to by link will be
